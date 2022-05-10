@@ -37,14 +37,45 @@
 BLOB_NAMES=(
 
     pdns_training_set/raw/pdns_training_set.raw.clean.english_000.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_001.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_002.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_003.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_004.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_005.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_006.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_007.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_008.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_009.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_010.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_011.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_012.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_013.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_014.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_015.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_016.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_017.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_018.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_019.tar.bz2
+    pdns_training_set/raw/pdns_training_set.raw.clean.english_020.tar.bz2
 
     pdns_training_set/enrollment_wav/pdns_training_set.enrollment_wav.english_000.tar.bz2
+    pdns_training_set/enrollment_wav/pdns_training_set.enrollment_wav.english_001.tar.bz2
+    pdns_training_set/enrollment_wav/pdns_training_set.enrollment_wav.english_002.tar.bz2
+    pdns_training_set/enrollment_wav/pdns_training_set.enrollment_wav.english_003.tar.bz2
+    pdns_training_set/enrollment_wav/pdns_training_set.enrollment_wav.english_004.tar.bz2
 
     pdns_training_set/pdns_training_set.enrollment_embeddings_000.tar.bz2
 
     datasets_fullband/noise_fullband/datasets_fullband.noise_fullband.audioset_000.tar.bz2
+    datasets_fullband/noise_fullband/datasets_fullband.noise_fullband.audioset_001.tar.bz2
+    datasets_fullband/noise_fullband/datasets_fullband.noise_fullband.audioset_002.tar.bz2
+    datasets_fullband/noise_fullband/datasets_fullband.noise_fullband.audioset_003.tar.bz2
+    datasets_fullband/noise_fullband/datasets_fullband.noise_fullband.audioset_004.tar.bz2
+    datasets_fullband/noise_fullband/datasets_fullband.noise_fullband.audioset_005.tar.bz2
+    datasets_fullband/noise_fullband/datasets_fullband.noise_fullband.audioset_006.tar.bz2
 
     datasets_fullband/noise_fullband/datasets_fullband.noise_fullband.freesound_000.tar.bz2
+    datasets_fullband/noise_fullband/datasets_fullband.noise_fullband.freesound_001.tar.bz2
 
     datasets_fullband/datasets_fullband.impulse_responses_000.tar.bz2
 
@@ -70,11 +101,11 @@ do
     curl -s -I "$URL" | head -n 2
 
     # Actually download the files: UNCOMMENT when ready to download
-    curl "$URL" -o "$OUTPUT_PATH/$BLOB"
+    # curl "$URL" -o "$OUTPUT_PATH/$BLOB"
 
     # Same as above, but using wget
     # wget "$URL" -O "$OUTPUT_PATH/$BLOB"
 
     # Same, + unpack files on the fly
-    # curl "$URL" | tar -C "$OUTPUT_PATH" -f - -x -j
+    curl "$URL" | tar -C "$OUTPUT_PATH" -f - -x -j
 done
