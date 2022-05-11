@@ -610,7 +610,7 @@ def main_body():
         params['fileindex_start'] = int(cfg['fileindex_start'])
         params['fileindex_end'] = int(cfg['fileindex_end'])
     else:
-        params['num_files'] = int((params['total_hours']*6*6)/params['audio_length'])
+        params['num_files'] = int((params['total_hours']*60*60)/params['audio_length'])
         params['fileindex_start'] = 0
         params['fileindex_end'] = int(params['num_files'])
 
