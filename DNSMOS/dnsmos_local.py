@@ -61,8 +61,6 @@ def main(args):
                 audio = np.append(audio, audio)
             
             num_hops = int(np.floor(len(audio)/fs) - args.input_length)+1
-            print('num_hops:', num_hops)
-            print('fs :',fs)
             hop_len_samples = fs
             predicted_mos_sig_seg = []
             predicted_mos_bak_seg = []
@@ -107,7 +105,7 @@ if __name__=="__main__":
     parser.add_argument('-t', "--testset_dir", default='.', 
                         help='Path to the dir containing audio clips in .wav to be evaluated')
     parser.add_argument('-o', "--csv_path", default=None, help='Dir to the csv that saves the results')
-    parser.add_argument('-l', "--input_length", type=int, default=3)
+    parser.add_argument('-l', "--input_length", type=int, default=3, help='length of audio, unit: 10 sec.')
     parser.add_argument('-r', "--run_name", type=str, default="dnsmos_p835_inference_sig_bak_ovr_test", 
                         help='Change the name depending on the test set and DNS model being evaluated')
     
