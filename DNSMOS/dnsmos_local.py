@@ -71,6 +71,9 @@ def main(args):
                 input_features = np.array(audio_logpowspec(audio=audio_seg, sr=fs)).astype('float32')[np.newaxis,:,:]
 
                 onnx_inputs_sig = {inp.name: input_features for inp in session_sig.get_inputs()}
+                print(onnx_inputs_sig)
+                print(session_sig)
+                print(COEFS_SIG)
                 mos_sig = poly.polyval(session_sig.run(None, onnx_inputs_sig), COEFS_SIG)
                     
                 onnx_inputs_bak_ovr = {inp.name: input_features for inp in session_bak_ovr.get_inputs()}
