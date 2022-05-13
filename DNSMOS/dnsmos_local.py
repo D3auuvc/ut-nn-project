@@ -61,7 +61,8 @@ def main(args):
                 audio = np.append(audio, audio)
             
             num_hops = int(np.floor(len(audio)/fs) - args.input_length)+1
-            print(num_hops)
+            print('num_hops:', num_hops)
+            print('fs :',fs)
             hop_len_samples = fs
             predicted_mos_sig_seg = []
             predicted_mos_bak_seg = []
