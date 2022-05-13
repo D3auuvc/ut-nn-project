@@ -61,6 +61,7 @@ def main(args):
                 audio = np.append(audio, audio)
             
             num_hops = int(np.floor(len(audio)/fs) - args.input_length)+1
+            print(num_hops)
             hop_len_samples = fs
             predicted_mos_sig_seg = []
             predicted_mos_bak_seg = []
@@ -70,7 +71,6 @@ def main(args):
                 audio_seg = audio[int(idx*hop_len_samples) : int((idx+args.input_length)*hop_len_samples)]
                 input_features = np.array(audio_logpowspec(audio=audio_seg, sr=fs)).astype('float32')[np.newaxis,:,:]
 
-                print(len(session_sig.get_inputs()),session_sig.get_inputs())
                 onnx_inputs_sig = {inp.name: input_features for inp in session_sig.get_inputs()}
                 mos_sig = poly.polyval(session_sig.run(None, onnx_inputs_sig), COEFS_SIG)
                     
