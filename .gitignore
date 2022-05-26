@@ -133,3 +133,12 @@ dmypy.json
 /pdns_training_set
 /datasets_fullband
 /datasets
+
+# log folder
+logs/
+
+# output folder
+output/
+
+# testset
+personalized_dev_testset/
