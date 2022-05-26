@@ -15,12 +15,12 @@ def main(args):
     assert inPath.exists()
 
     cfg = {
-            'winlen'   : 0.02,
-            'hopfrac'  : 0.5,
-            'fs'       : args.fs,
+            'winlen'   : 0.02, 
+            'hopfrac'  : 0.5, # the default spacing between frames
+            'fs'       : args.fs, # sampling rate of the input audio
             'mingain'  : -80,
             'feattype' : 'LogPow',
-            'nfft'     : 320
+            'nfft'     : 320 # window,  len(win) <= N_fft
         }
 
     if args.fs == 48000:
